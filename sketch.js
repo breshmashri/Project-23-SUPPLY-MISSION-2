@@ -1,11 +1,6 @@
-var block1 = createSprite(20, 200, 100, 20);
-block1.shapeColor = "red";
-var block2 = createSprite(100, 20, 100, 20);
-block2.shapeColor = "red";
-var block3 = createSprite(100, 20, 100, 20);
-block3.shapeColor = "red";
 var helicopterIMG, helicopterSprite, packageSprite, packageIMG;
 var packageBody, ground;
+var natureIMG, natureSprite;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -13,14 +8,25 @@ const Body = Matter.Body;
 
 function preload()
 {
-	helicopterIMG = loadImage("helicopter.png")
-	packageIMG = loadImage("package.png")
+	helicopterIMG = loadImage("helicopter.png");
+	packageIMG = loadImage("package.png");
+	natureIMG = loadImage("nature.png");
 }
 
 function setup() {
 	createCanvas(800, 700);
 	rectMode(CENTER);
-	
+
+	natureSprite = createSprite(width/2, height/2, 10,10);
+	natureSprite.addImage(natureIMG);
+	natureSprite.scale = 2.8;
+
+    var block1 = createSprite(400, 650, 200, 20);
+    block1.shapeColor = "red";
+    var block2 = createSprite(290, 610, 20, 100);
+    block2.shapeColor = "red";
+    var block3 = createSprite(510, 610, 20, 100);
+	block3.shapeColor = "red";
 
 	packageSprite = createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
